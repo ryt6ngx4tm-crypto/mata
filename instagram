@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Login Style</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Fundal în culorile Instagram */
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* Stil pentru casetele de text */
+        input {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #fafafa;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border: 1px solid #a8a8a8;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: #0095f6;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #1877f2;
+        }
+
+        .footer-text {
+            color: #8e8e8e;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        /* Imagine decorativă mică */
+        .icon {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Insta Icon" class="icon">
+        
+        <h1>Instagram</h1>
+
+        <div class="input-group">
+            <input type="text" placeholder="Username, email sau număr telefon">
+        </div>
+
+        <div class="input-group">
+            <input type="password" placeholder="Parolă">
+        </div>
+
+        <button type="button">Log In</button>
+
+        <p class="footer-text">Nu ai un cont? Înscrie-te.</p>
+    </div>
+
+</body>
+</html>
